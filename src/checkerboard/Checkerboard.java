@@ -1,3 +1,5 @@
+package checkerboard;
+
 
 import java.awt.Color;
 import javafx.scene.layout.AnchorPane;
