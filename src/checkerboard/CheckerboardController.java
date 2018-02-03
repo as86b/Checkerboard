@@ -51,7 +51,7 @@ public class CheckerboardController extends CheckerboardStarter implements Initi
         this.stage.heightProperty().addListener(lambdaChangeListener);
         
         refresh();   
-       
+     
         anchorPane = checkerboard.getBoard();
     }
     
@@ -63,6 +63,26 @@ public class CheckerboardController extends CheckerboardStarter implements Initi
         checkerboard.clear();
     }
 
+    @FXML
+    private void blueSquares(){
+        //clean up whatever exists first then inserting new desired color
+        vBox.getChildren().remove(checkerboard.getBoard());
+        //remake the board
+        checkerboard = new Checkerboard(checkerboard.getNumRows(), checkerboard.getNumCols(), 60, 60, Color.SKYBLUE, Color.DARKBLUE);
+        vBox.getChildren().add(checkerboard.getBoard());
+        refresh();
+    }
+
+    @FXML
+    private void redSquares(){
+        //clean up whatever exists first then inserting new desired color
+        vBox.getChildren().remove(checkerboard.getBoard());
+        //remake the board
+        checkerboard = new Checkerboard(checkerboard.getNumRows(), checkerboard.getNumCols(), 60, 60, Color.RED, Color.BLACK);
+        vBox.getChildren().add(checkerboard.getBoard());
+        refresh();
+    }
+    
     //In order of the menuitems from the menubar
     //will remove all items from the stage first no matter what
     //and then replace it with the desired board
@@ -95,27 +115,6 @@ public class CheckerboardController extends CheckerboardStarter implements Initi
         vBox.getChildren().remove(checkerboard.getBoard());
         checkerboard = new Checkerboard(3, 3, 60, 60, checkerboard.getLightColor(), checkerboard.getDarkColor());
         vBox.getChildren().add(checkerboard.getBoard());
-        refresh();
-    }
-
-    @FXML
-    private void turnBlue(){
-
-        vBox.getChildren().remove(checkerboard.getBoard());
-        checkerboard = new Checkerboard(checkerboard.getNumRows(), checkerboard.getNumCols(), 60, 60, Color.SKYBLUE, Color.DARKBLUE);
-        vBox.getChildren().add(checkerboard.getBoard());
-        refresh();
-    }
-
-    @FXML
-    private void turnRed(){
-
-        vBox.getChildren().remove(checkerboard.getBoard());
-
-        checkerboard = new Checkerboard(checkerboard.getNumRows(), checkerboard.getNumCols(), 60, 60, Color.RED, Color.BLACK);
-
-        vBox.getChildren().add(checkerboard.getBoard());
-
         refresh();
     }
 }

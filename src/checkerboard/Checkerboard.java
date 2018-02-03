@@ -56,8 +56,6 @@ public class Checkerboard {
         rectangleHeight = Math.ceil(height / (double)rows);
         anchorPane.setPrefWidth(width);
         anchorPane.setPrefHeight(height);
-        
-        //int numColors = color.length;
 
         //Dale said to go row first then column
         for (int row = 0; row < rows; row++) {
