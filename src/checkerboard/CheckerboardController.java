@@ -36,7 +36,6 @@ public class CheckerboardController extends CheckerboardStarter implements Initi
 
     } 
 
-    //@Override
     public void start(Stage stage) {
         this.stage = stage;
         

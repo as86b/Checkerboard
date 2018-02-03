@@ -8,9 +8,6 @@ import javafx.scene.shape.Rectangle;
 /*
  * To change this license header, choose License Headers in Project Propertiespackage checkerboard;
 
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
-
 /*
  * @author Austin Sizemore
  */
